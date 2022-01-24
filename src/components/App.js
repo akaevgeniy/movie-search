@@ -2,6 +2,7 @@ import React from 'react';
 // Добавили компонент Header с логотипом проекта
 import Header from './Header/Header';
 import Main from './Main/Main';
+import Footer from './Footer/Footer';
 import api from '../utils/api';
 function App() {
   const [title, setTitle] = React.useState('');
@@ -18,6 +19,7 @@ function App() {
     <div className="App">
       <Header />
       <Main movie={title} functionSubmit={handleSubmit} changeInput={handleTitleChange} moviesList={searchArray} />
+      <Footer />
     </div>
   );
 }

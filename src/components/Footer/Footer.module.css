@@ -1,0 +1,25 @@
+.block {
+  margin: 0;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-image: url(../../images/footer-line.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.text {
+  margin: 0;
+  padding: 0;
+  margin-right: 105px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+  color: #191919;
+}
