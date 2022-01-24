@@ -1,0 +1,37 @@
+.element {
+  margin: 0;
+  margin-left: 113px;
+  margin-right: 113px;
+  margin-bottom: 20px;
+}
+.list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.image {
+  width: 120px;
+  height: 200px;
+}
+.title {
+  margin: 0;
+  margin-left: 30px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 28px;
+  /* or 140% */
+  color: #191919;
+}
+.year {
+  margin: 0;
+  margin-left: 30px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 28px;
+  /* or 140% */
+  color: #191919;
+}
