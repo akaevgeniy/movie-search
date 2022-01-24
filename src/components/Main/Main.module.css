@@ -83,3 +83,17 @@
   text-align: left;
   color: #ffffff;
 }
+.results {
+  margin: 0;
+  padding: 0;
+  margin-left: 113px;
+  margin-bottom: 12px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 40px;
+  /* or 190% */
+  letter-spacing: 1.5px;
+  color: #44464d;
+}

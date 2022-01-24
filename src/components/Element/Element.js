@@ -26,9 +26,18 @@ function Element(props) {
   return (
     <article className={styles.element}>
       <div className={styles.list}>
-        <img className={styles.image} src="http://www.prdisk.ru/images/ne_smotrite_naverkh_dvd_dvd_r_dvd_r_f3d_big.jpeg" alt="Movie see" />
-        <p className={styles.title}>Don't look up</p>
-        <p className={styles.year}>2021</p>
+        <img
+          className={styles.image}
+          src={props.poster}
+          alt={props.title}
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null; // prevents looping
+            currentTarget.src = 'https://hd1.streamfilm.top/assets/general/images/no_poster.jpg';
+          }}
+        />
+        <p className={styles.title}>{props.title}</p>
+        <p className={styles.title}>{props.year}</p>
+        <p className={styles.title}>{props.type}</p>
       </div>
     </article>
   );
