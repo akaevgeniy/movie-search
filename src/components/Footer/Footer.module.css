@@ -2,8 +2,8 @@
   margin: 0;
   margin-top: 50px;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
   background-image: url(../../images/footer-line.png);
   background-position: bottom;
   background-repeat: no-repeat;
@@ -22,4 +22,15 @@
   line-height: 24px;
   /* identical to box height, or 171% */
   color: #191919;
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  margin-right: 105px;
+  margin-bottom: 20px;
+}
+.icon {
+  height: 25px;
+  width: 25px;
+  margin-left: 32px;
 }
