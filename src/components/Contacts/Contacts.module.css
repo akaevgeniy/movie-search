@@ -1,0 +1,54 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.button {
+  border: none;
+  border-radius: 36px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 133% */
+  height: 72px;
+  width: 235px;
+  color: #191919;
+  background: url(../../images/yellow_button_icon.svg) #f5ff93 no-repeat 180px;
+  padding-left: 40px;
+  text-align: left;
+  cursor: pointer;
+}
+.title {
+  margin: 0;
+  margin-bottom: 30px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 54px;
+  line-height: 72px;
+  /* or 133% */
+  letter-spacing: 2.25px;
+  color: #212529;
+}
+.bold {
+  font-weight: bold;
+}
+.subtitle {
+  margin: 0;
+  margin-bottom: 15px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 133% */
+  color: #212529;
+}

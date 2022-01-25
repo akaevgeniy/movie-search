@@ -3,7 +3,9 @@ import React from 'react';
 import Header from './Header/Header';
 import Main from './Main/Main';
 import Footer from './Footer/Footer';
+import Contacts from './Contacts/Contacts';
 import api from '../utils/api';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 function App() {
   const [title, setTitle] = React.useState('');
   const [searchArray, setSearchArray] = React.useState({});
@@ -18,11 +20,29 @@ function App() {
     api.movieImdbSearch({ imdb }).then((data) => console.log(data));
   }
   return (
-    <div className="App">
-      <Header />
-      <Main movie={title} functionSubmit={handleSubmit} changeInput={handleTitleChange} moviesList={searchArray} moreInfo={getMovieInfo} />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Main movie={title} functionSubmit={handleSubmit} changeInput={handleTitleChange} moviesList={searchArray} moreInfo={getMovieInfo} />
+          </Route>
+          <Route exact path="/list">
+            <h3>List</h3>
+          </Route>
+          <Route path="/about">
+            <h3>About the site</h3>
+          </Route>
+          <Route path="/contacts">
+            <Contacts />
+          </Route>
+          <Route path="*">
+            <p>Not found</p>
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
