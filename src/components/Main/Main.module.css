@@ -6,8 +6,12 @@
 }
 .search__block {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-bottom: 47px;
+}
+.info__block {
+  display: flex;
+  flex-direction: row;
 }
 .search {
   display: flex;
@@ -48,6 +52,11 @@
   max-width: 507px;
   max-height: 370px;
   margin-right: 24px;
+}
+.form {
+  margin: 0;
+  padding: 0;
+  margin-left: 113px;
 }
 .input {
   padding: 0;

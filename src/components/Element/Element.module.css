@@ -3,6 +3,7 @@
   margin-left: 113px;
   margin-right: 113px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 .list {
   display: flex;

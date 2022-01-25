@@ -1,10 +1,11 @@
 import { BrowserRouter, NavLink, Route, Switch } from 'react-router-dom';
+import logo from '../../images/logo.png';
 import styles from './Header.module.css';
 function Header() {
   return (
     <header className={styles.header}>
       <NavLink to="/" className={styles.logo}>
-        ALL movies search
+        <img className={styles.logo_image} src={logo} alt="logo" />
       </NavLink>
       <nav className={styles.menu__list}>
         <NavLink className={styles.menu__link} to="/">

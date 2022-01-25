@@ -13,12 +13,14 @@ function App() {
   function handleSubmit(e) {
     e.preventDefault();
     api.movieList(title).then((data) => setSearchArray(data));
-    console.log(searchArray);
+  }
+  function getMovieInfo(imdb) {
+    api.movieImdbSearch({ imdb }).then((data) => console.log(data));
   }
   return (
     <div className="App">
       <Header />
-      <Main movie={title} functionSubmit={handleSubmit} changeInput={handleTitleChange} moviesList={searchArray} />
+      <Main movie={title} functionSubmit={handleSubmit} changeInput={handleTitleChange} moviesList={searchArray} moreInfo={getMovieInfo} />
       <Footer />
     </div>
   );

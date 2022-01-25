@@ -10,6 +10,9 @@
   margin-left: 32px;
   margin-right: 48px;
 }
+.logo_image {
+  max-width: 77px;
+}
 .menu__list {
   margin: 0;
   padding: 0;
