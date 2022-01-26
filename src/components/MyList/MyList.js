@@ -6,6 +6,15 @@ function MyList() {
       <h2 className={styles.title}>My watch list</h2>
       <article className={styles.element}>
         <div className={styles.list}>
+          {' '}
+          <p className={styles.header__text}>№</p>
+          <p className={styles.header__text}>Poster</p>
+          <p className={styles.header__text}>Movie</p>
+          <p className={styles.header__text}>Date</p>
+          <p className={styles.header__text}>Rating</p>
+        </div>
+        <div className={styles.list}>
+          <p className={styles.list__text}>1</p>
           <img
             className={styles.image}
             src="https://hd1.streamfilm.top/assets/general/images/no_poster.jpg"
