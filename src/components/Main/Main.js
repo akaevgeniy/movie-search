@@ -1,7 +1,7 @@
 import styles from './Main.module.css';
 import main_image from '../../images/main-movie.jpg';
 import Element from '../Element/Element';
-import { useRouteMatch, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 function Main(props) {
   return (
     <main className={styles.main}>
@@ -36,7 +36,7 @@ function Main(props) {
         <p className={styles.results}>Total results: {props.moviesList.totalResults}</p>
         {props.moviesList.Search
           ? props.moviesList.Search.map((elem) => (
-              <Link to={`movie/${elem.imdbID}`} key={elem.imdbID}>
+              <Link className={styles.decoration_none} to={`movie/${elem.imdbID}`} key={elem.imdbID}>
                 <Element id={elem.imdbID} poster={elem.Poster} title={elem.Title} year={elem.Year} type={elem.Type} openInfo={props.moreInfo} />
               </Link>
             ))
