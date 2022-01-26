@@ -13,7 +13,7 @@ function Contacts() {
           <span className={styles.bold}>E-mail:</span> akaevgeniy@yandex.ru
         </p>
         <p className={styles.subtitle}>
-          <span className={styles.bold}>Telegram:</span> akaevgeniy
+          <span className={styles.bold}>Telegram:</span> @akaevgeniy
         </p>
         <p className={styles.subtitle}>
           <span className={styles.bold}>My Github:</span> https://github.com/akaevgeniy

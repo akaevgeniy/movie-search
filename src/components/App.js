@@ -4,6 +4,7 @@ import Header from './Header/Header';
 import Main from './Main/Main';
 import Footer from './Footer/Footer';
 import Contacts from './Contacts/Contacts';
+import About from './About/About';
 import api from '../utils/api';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 function App() {
@@ -31,7 +32,7 @@ function App() {
             <h3>List</h3>
           </Route>
           <Route path="/about">
-            <h3>About the site</h3>
+            <About />
           </Route>
           <Route path="/contacts">
             <Contacts />

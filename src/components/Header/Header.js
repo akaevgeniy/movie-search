@@ -16,7 +16,7 @@ function Header() {
         </NavLink>
 
         <NavLink className={styles.menu__link} to="/about">
-          About the site
+          About us
         </NavLink>
 
         <NavLink className={styles.menu__link} to="/contacts">
