@@ -33,16 +33,18 @@ function MoviePage(props) {
 
         <div className={styles.actors}>
           <h4 className={styles.subtitle}>Actors</h4>
-          <p>{movie.Actors}</p>
+          <p className={styles.subtext}>{movie.Actors}</p>
           <h4 className={styles.subtitle}>Awards</h4>
-          <p>{movie.Awards}</p>
+          <p className={styles.subtext}>{movie.Awards}</p>
         </div>
       </div>
       <div className={styles.plot__block}>
         <h4 className={styles.subtitle}>Plot</h4>
         <p className={styles.subtext}>{movie.Plot} </p>
       </div>
-      <button className={styles.button} onClick={() => history.goBack()}></button>
+      <button className={styles.button} onClick={() => history.goBack()}>
+        Come Back
+      </button>
     </div>
   );
 }
