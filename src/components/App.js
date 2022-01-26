@@ -5,6 +5,7 @@ import Main from './Main/Main';
 import Footer from './Footer/Footer';
 import Contacts from './Contacts/Contacts';
 import About from './About/About';
+import MyList from './MyList/MyList';
 import api from '../utils/api';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 function App() {
@@ -29,7 +30,7 @@ function App() {
             <Main movie={title} functionSubmit={handleSubmit} changeInput={handleTitleChange} moviesList={searchArray} moreInfo={getMovieInfo} />
           </Route>
           <Route exact path="/list">
-            <h3>List</h3>
+            <MyList />
           </Route>
           <Route path="/about">
             <About />
