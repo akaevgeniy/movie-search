@@ -6,11 +6,13 @@ import Footer from './Footer/Footer';
 import Contacts from './Contacts/Contacts';
 import About from './About/About';
 import MyList from './MyList/MyList';
+import MoviePage from './MoviePage/MoviePage';
 import api from '../utils/api';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 function App() {
   const [title, setTitle] = React.useState('');
   const [searchArray, setSearchArray] = React.useState({});
+  const [findingMovie, setFindingMovie] = React.useState({});
   function handleTitleChange(e) {
     setTitle(e.target.value);
   }
@@ -19,7 +21,9 @@ function App() {
     api.movieList(title).then((data) => setSearchArray(data));
   }
   function getMovieInfo(imdb) {
-    api.movieImdbSearch({ imdb }).then((data) => console.log(data));
+    api.movieImdbSearch({ imdb }).then((data) => {
+      setFindingMovie(data);
+    });
   }
   return (
     <BrowserRouter>
@@ -37,6 +41,9 @@ function App() {
           </Route>
           <Route path="/contacts">
             <Contacts />
+          </Route>
+          <Route path="/movie/:id">
+            <MoviePage findMovie={findingMovie} />
           </Route>
           <Route path="*">
             <p>Not found</p>
