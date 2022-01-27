@@ -11,7 +11,6 @@
 }
 .image {
   width: 120px;
-  height: 200px;
 }
 .title {
   margin: 0;
@@ -24,4 +23,34 @@
   /* or 140% */
   color: #191919;
   text-decoration: none;
+}
+@media screen and (max-width: 1279px) {
+  .element {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .list {
+    grid-template-columns: 100px 300px 150px 150px;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .image {
+    width: 100px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .image {
+    width: 90px;
+    grid-row: 1/5;
+  }
+  .list {
+    grid-template-columns: 90px 1fr;
+  }
+  .title {
+    font-size: 17px;
+    margin-left: 10px;
+  }
 }

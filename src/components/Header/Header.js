@@ -22,6 +22,7 @@ function Header() {
         <NavLink className={styles.menu__link} to="/contacts">
           Contacts
         </NavLink>
+        <button className={styles.hamburger_button}></button>
       </nav>
     </header>
   );

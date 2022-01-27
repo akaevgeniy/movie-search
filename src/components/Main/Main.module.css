@@ -223,6 +223,7 @@
   }
   .elements {
     margin-left: calc((100% - 300px) / 2);
+    margin-right: calc((100% - 300px) / 2);
   }
   .subtitle {
     margin-top: 17px;
