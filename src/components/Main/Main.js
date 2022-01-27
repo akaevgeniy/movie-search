@@ -32,7 +32,7 @@ function Main(props) {
           </button>
         </form>
       </section>
-      <section aria-label="label" className="elements">
+      <section aria-label="label" className={styles.elements}>
         <p className={styles.results}>Total results: {props.moviesList.totalResults}</p>
         {props.moviesList.Search
           ? props.moviesList.Search.map((elem) => (
