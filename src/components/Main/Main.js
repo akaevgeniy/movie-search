@@ -28,7 +28,7 @@ function Main(props) {
             onChange={props.changeInput}
           ></input>
           <button type="submit" className={styles.button}>
-            Get Started
+            Go search
           </button>
         </form>
       </section>

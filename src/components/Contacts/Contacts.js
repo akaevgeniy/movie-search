@@ -19,8 +19,9 @@ function Contacts() {
           <span className={styles.bold}>My Github:</span> https://github.com/akaevgeniy
         </p>
       </div>
-
-      <button className={styles.button}>See more</button>
+      <form action="https://github.com/akaevgeniy/movie-search" target="_blank">
+        <button className={styles.button}>See more</button>
+      </form>
     </section>
   );
 }

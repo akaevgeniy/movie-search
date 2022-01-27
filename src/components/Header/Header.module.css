@@ -32,4 +32,8 @@
   color: #191919;
   text-decoration: none;
   margin-right: 24px;
+  transition-duration: 0.3s;
+}
+.menu__link:hover {
+  opacity: 0.6;
 }

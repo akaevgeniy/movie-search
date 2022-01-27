@@ -25,7 +25,9 @@ function Contacts() {
           <figcaption className={styles.photo__text}>It's me, Evgeniy Sergeev</figcaption>
         </figure>
       </div>
-      <button className={styles.button}>Go to repository</button>
+      <form action="https://github.com/akaevgeniy/movie-search" target="_blank">
+        <button className={styles.button}>Go to repository</button>
+      </form>
     </section>
   );
 }

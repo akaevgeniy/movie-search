@@ -6,9 +6,15 @@ function Footer() {
   return (
     <footer className={styles.block}>
       <nav className={styles.links}>
-        <img className={styles.icon} src={inst_icon} alt="Instagram" />
-        <img className={styles.icon} src={vk_icon} alt="VK" />
-        <img className={styles.icon} src={teleg_icon} alt="Telegram" />
+        <a href="https://www.instagram.com/whitechuvash/" target="_blank">
+          <img className={styles.icon} src={inst_icon} alt="Instagram" />
+        </a>
+        <a href="https://vk.com/whitechuvash" target="_blank">
+          <img className={styles.icon} src={vk_icon} alt="VK" />{' '}
+        </a>
+        <a href="https://t-do.ru/akaevgeniy" target="_blank">
+          <img className={styles.icon} src={teleg_icon} alt="Telegram" />
+        </a>
       </nav>
       <p className={styles.text}>&copy; 2022 ALL movies search</p>
     </footer>
