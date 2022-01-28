@@ -25,8 +25,7 @@
   font-style: normal;
   font-weight: bold;
   font-size: 37px;
-  line-height: 52px;
-  /* or 133% */
+  line-height: 133%;
   letter-spacing: 2.25px;
   color: #212529;
   margin-bottom: 10px;
@@ -38,8 +37,7 @@
   font-style: normal;
   font-weight: bold;
   font-size: 27px;
-  line-height: 42px;
-  /* or 133% */
+  line-height: 133%;
   letter-spacing: 2.25px;
   color: #212529;
 }
@@ -50,8 +48,7 @@
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  line-height: 21px;
-  /* identical to box height, or 133% */
+  line-height: 133%;
   color: #212529;
 }
 .onetext {
@@ -92,4 +89,52 @@
 .button:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+@media screen and (max-width: 1023px) {
+  .block {
+    margin-left: calc((100% - 709px) / 2);
+    margin-right: calc((100% - 709px) / 2);
+  }
+  .subtitle {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .block {
+    align-items: flex-start;
+    margin-left: calc((100% - 479px) / 2);
+    margin-right: calc((100% - 479px) / 2);
+  }
+  .movie__detals {
+    margin-right: 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  .movie__block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .poster {
+    max-width: 350px;
+    margin-right: 0;
+    margin-bottom: 15px;
+    align-self: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  .block {
+    margin-left: calc((100% - 300px) / 2);
+    margin-right: calc((100% - 300px) / 2);
+  }
+  .poster {
+    max-width: 300px;
+  }
+  .button {
+    font-size: 16px;
+    height: 68px;
+  }
+  .movie__title {
+    font-size: 34px;
+  }
 }
