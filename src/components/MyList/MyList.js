@@ -32,8 +32,8 @@ function MyList() {
               Japan, <span>120 min</span>
             </p>
           </div>
-          <p className={styles.list__text}>26.01.2022 13:32</p>
-          <p className={styles.list__text}>9</p>
+          <p className={styles.list__hidden}>26.01.2022 13:32</p>
+          <p className={styles.list__hidden}>9</p>
         </div>
       </article>
     </section>
