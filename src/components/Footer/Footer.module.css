@@ -38,3 +38,33 @@
 .icon:hover {
   opacity: 0.6;
 }
+@media screen and (max-width: 1279px) {
+  .info {
+    margin-right: calc((100% - 963px) / 2);
+  }
+  .text {
+    margin-right: 0;
+  }
+  .links {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .info {
+    margin-right: calc((100% - 709px) / 2);
+  }
+  .links {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .info {
+    margin-right: calc((100% - 479px) / 2);
+  }
+}
+@media screen and (max-width: 500px) {
+  .info {
+    margin-right: calc((100% - 300px) / 2);
+    margin-left: calc((100% - 300px) / 2);
+  }
+}
