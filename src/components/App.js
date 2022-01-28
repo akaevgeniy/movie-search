@@ -7,12 +7,20 @@ import Contacts from './Contacts/Contacts';
 import About from './About/About';
 import MyList from './MyList/MyList';
 import MoviePage from './MoviePage/MoviePage';
+import Menu from './Menu/Menu';
 import api from '../utils/api';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 function App() {
   const [title, setTitle] = React.useState('');
   const [searchArray, setSearchArray] = React.useState({});
   const [findingMovie, setFindingMovie] = React.useState({});
+  const items = [
+    { value: 'Search movie', href: '/' },
+    { value: 'Watch List', href: '/list' },
+    { value: 'About us', href: '/about' },
+    { value: 'Contacts', href: '/contacts' },
+  ];
+  const [menuActive, setMenuActive] = React.useState(false);
   function handleTitleChange(e) {
     setTitle(e.target.value);
   }
@@ -28,7 +36,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
+        <Header active={menuActive} changeActive={setMenuActive} />
+        <Menu active={menuActive} items={items} header="Menu" />
         <Switch>
           <Route exact path="/">
             <Main movie={title} functionSubmit={handleSubmit} changeInput={handleTitleChange} moviesList={searchArray} moreInfo={getMovieInfo} />

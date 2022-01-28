@@ -1,7 +1,7 @@
-import { BrowserRouter, NavLink, Route, Switch } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo.png';
 import styles from './Header.module.css';
-function Header() {
+function Header({ active, changeActive }) {
   return (
     <header className={styles.header}>
       <NavLink to="/" className={styles.logo}>
@@ -18,11 +18,14 @@ function Header() {
         <NavLink className={styles.menu__link} to="/about">
           About us
         </NavLink>
-
         <NavLink className={styles.menu__link} to="/contacts">
           Contacts
         </NavLink>
-        <button className={styles.hamburger_button}></button>
+        <nav className={styles.navbar}>
+          <button className={styles.hamburger_button} onClick={() => changeActive(!active)}>
+            <span className={styles.button__span}></span>
+          </button>
+        </nav>
       </nav>
     </header>
   );
