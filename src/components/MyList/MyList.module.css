@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-top: 80px;
 }
 .title {
   margin: 0;
@@ -107,6 +108,9 @@
   }
   .header__text {
     display: none;
+  }
+  .block {
+    margin-top: 50px;
   }
 }
 @media screen and (max-width: 500px) {

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 80px;
 }
 .text {
   display: flex;
@@ -62,6 +63,11 @@
   line-height: 24px;
   /* identical to box height, or 133% */
   color: #212529;
+}
+@media screen and (max-width: 767px) {
+  .block {
+    margin-top: 50px;
+  }
 }
 @media screen and (max-width: 500px) {
   .title {
