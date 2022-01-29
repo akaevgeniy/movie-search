@@ -22,8 +22,11 @@ function Header({ active, changeActive }) {
           Contacts
         </NavLink>
         <nav className={styles.navbar}>
-          <button className={styles.hamburger_button} onClick={() => changeActive(!active)}>
-            <span className={styles.button__span}></span>
+          <button
+            className={active ? `${styles.hamburger_button} ${styles.active}` : `${styles.hamburger_button}`}
+            onClick={() => changeActive(!active)}
+          >
+            <span className={active ? `${styles.button__span} ${styles.active}` : `${styles.button__span}`}></span>
           </button>
         </nav>
       </nav>

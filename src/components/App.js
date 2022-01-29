@@ -37,7 +37,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Header active={menuActive} changeActive={setMenuActive} />
-        <Menu active={menuActive} items={items} header="Menu" />
+        <Menu active={menuActive} changeActive={setMenuActive} items={items} header="Menu" />
         <Switch>
           <Route exact path="/">
             <Main movie={title} functionSubmit={handleSubmit} changeInput={handleTitleChange} moviesList={searchArray} moreInfo={getMovieInfo} />

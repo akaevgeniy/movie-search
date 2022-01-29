@@ -1,14 +1,14 @@
 import { NavLink } from 'react-router-dom';
 import React from 'react';
-import './Menu.css';
-function Menu({ header, items, active }) {
+import styles from './Menu.module.css';
+function Menu({ header, items, active, changeActive }) {
   return (
-    <div className={active ? 'menu active' : 'menu'}>
-      <div className="menu__block">
-        <h4 className="menu__header">{header}</h4>
-        <ul className="menu__lists">
+    <div className={active ? `${styles.menu} ${styles.active}` : `${styles.menu}`}>
+      <div className={styles.menu__block}>
+        <h4 className={styles.menu__header}>{header}</h4>
+        <ul className={styles.menu__lists}>
           {items.map((item) => (
-            <NavLink className="menu__link" key={item.href} to={item.href}>
+            <NavLink className={styles.menu__link} onClick={() => changeActive(!active)} key={item.href} to={item.href}>
               {item.value}
             </NavLink>
           ))}
