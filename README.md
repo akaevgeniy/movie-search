@@ -17,7 +17,7 @@ _Планы по доработке_
 
 **Использованные технологии**
 
-JavaScript-библиотека React, React hooks, Module-styled CSS, React-router-dom, Redux/ReduxToolKit, API Axios, JSX.
+JavaScript-библиотека React, React hooks, Module-styles CSS, React-router-dom, Redux/ReduxToolKit, API Axios, JSX.
 
 **Инструкция по развертыванию**
 
