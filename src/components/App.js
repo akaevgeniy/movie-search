@@ -8,7 +8,7 @@ import About from './About/About';
 import MyList from './MyList/MyList';
 import MoviePage from './MoviePage/MoviePage';
 import Menu from './Menu/Menu';
-import api from '../utils/api';
+import * as api from '../utils/api';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 function App() {
   const [title, setTitle] = React.useState('');
@@ -21,17 +21,28 @@ function App() {
     { value: 'Contacts', href: '/contacts' },
   ];
   const [menuActive, setMenuActive] = React.useState(false);
+  //функция, выводящая в консоль ошибку при запросе к АПИ
+  const parseError = (err) => {
+    console.log(err);
+  };
+
   function handleTitleChange(e) {
     setTitle(e.target.value);
   }
   function handleSubmit(e) {
     e.preventDefault();
-    api.movieList(title).then((data) => setSearchArray(data));
+    api
+      .movieList(title)
+      .then((data) => setSearchArray(data))
+      .catch((err) => parseError(err));
   }
   function getMovieInfo(imdb) {
-    api.movieImdbSearch({ imdb }).then((data) => {
-      setFindingMovie(data);
-    });
+    api
+      .movieImdbSearch({ imdb })
+      .then((data) => {
+        setFindingMovie(data);
+      })
+      .catch((err) => parseError(err));
   }
   return (
     <BrowserRouter>

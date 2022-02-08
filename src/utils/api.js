@@ -1,15 +1,9 @@
-class Api {
-  constructor(options) {
-    this._baseUrl = options.baseUrl;
-  }
-  movieImdbSearch({ imdb }) {
-    return fetch(`${this._baseUrl}?i=${imdb}&plot=full&apikey=72908fc`).then((response) => response.json());
-  }
-  movieList(name) {
-    return fetch(`${this._baseUrl}?s=${name}&apikey=72908fc`).then((response) => response.json());
-  }
-}
+export const BASE_URL = 'http://www.omdbapi.com/';
+export const API_KEY = '72908fc';
 
-export default Api = new Api({
-  baseUrl: 'http://www.omdbapi.com/',
-});
+export const movieImdbSearch = ({ imdb }) => {
+  return fetch(`${BASE_URL}?i=${imdb}&plot=full&apikey=${API_KEY}`).then((response) => response.json());
+};
+export const movieList = (name) => {
+  return fetch(`${BASE_URL}?s=${name}&apikey=${API_KEY}`).then((response) => response.json());
+};
