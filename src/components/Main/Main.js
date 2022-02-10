@@ -2,7 +2,7 @@ import styles from './Main.module.css';
 import main_image from '../../images/main-movie.jpg';
 import Element from '../Element/Element';
 import { Link } from 'react-router-dom';
-function Main(props) {
+function Main({ movie, functionSubmit, changeInput, moviesList, moreInfo }) {
   return (
     <main className={styles.main}>
       <section className={styles.search__block}>
@@ -16,7 +16,7 @@ function Main(props) {
           </div>
           <img className={styles.image} src={main_image} alt="Movie see" />
         </div>
-        <form className={styles.form} onSubmit={props.functionSubmit}>
+        <form className={styles.form} onSubmit={functionSubmit}>
           <input
             id="form-movie"
             className={styles.input}
@@ -24,8 +24,8 @@ function Main(props) {
             type="text"
             placeholder="Enter movie title to search..."
             required
-            value={props.movie || ''}
-            onChange={props.changeInput}
+            value={movie || ''}
+            onChange={changeInput}
           ></input>
           <button type="submit" className={styles.button}>
             Go search
@@ -33,11 +33,11 @@ function Main(props) {
         </form>
       </section>
       <section aria-label="label" className={styles.elements}>
-        <p className={styles.results}>Total results: {props.moviesList.totalResults}</p>
-        {props.moviesList.Search
-          ? props.moviesList.Search.map((elem) => (
+        <p className={styles.results}>Total results: {moviesList.totalResults}</p>
+        {moviesList.Search
+          ? moviesList.Search.map((elem) => (
               <Link className={styles.decoration_none} to={`movie/${elem.imdbID}`} key={elem.imdbID}>
-                <Element id={elem.imdbID} poster={elem.Poster} title={elem.Title} year={elem.Year} type={elem.Type} openInfo={props.moreInfo} />
+                <Element id={elem.imdbID} poster={elem.Poster} title={elem.Title} year={elem.Year} type={elem.Type} openInfo={moreInfo} />
               </Link>
             ))
           : ''}

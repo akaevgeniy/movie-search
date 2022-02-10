@@ -3,9 +3,9 @@ import { useHistory } from 'react-router-dom';
 
 import styles from './MoviePage.module.css';
 
-function MoviePage(props) {
+function MoviePage({ findMovie }) {
   const history = useHistory();
-  let movie = props.findMovie;
+  let movie = findMovie;
 
   return (
     <div className={styles.block}>

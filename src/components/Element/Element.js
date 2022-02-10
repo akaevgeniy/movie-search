@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Element.module.css';
 
-function Element(props) {
+function Element({ id, poster, title, year, type, openInfo }) {
   function handleClick() {
-    props.openInfo(props.id);
+    openInfo(id);
   }
 
   return (
@@ -11,16 +11,16 @@ function Element(props) {
       <div className={styles.list}>
         <img
           className={styles.image}
-          src={props.poster}
-          alt={props.title}
+          src={poster}
+          alt={title}
           onError={({ currentTarget }) => {
             currentTarget.onerror = null; // prevents looping
             currentTarget.src = 'https://hd1.streamfilm.top/assets/general/images/no_poster.jpg';
           }}
         />
-        <p className={styles.title}>{props.title}</p>
-        <p className={styles.title}>{props.year}</p>
-        <p className={styles.title}>{props.type}</p>
+        <p className={styles.title}>{title}</p>
+        <p className={styles.title}>{year}</p>
+        <p className={styles.title}>{type}</p>
       </div>
     </article>
   );
