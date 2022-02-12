@@ -16,6 +16,6 @@ export function moviesLoad(title) {
 export function menuVisible(status) {
   return {
     type: MENU_VISIBLE_CHANGE,
-    data: status,
+    data: !status,
   };
 }

@@ -8,7 +8,7 @@ export const menuReducer = (state = intialState, action) => {
   switch (action.type) {
     case MENU_VISIBLE_CHANGE:
       return {
-        visible: !action.data,
+        visible: action.data,
       };
 
     default:
