@@ -5,7 +5,6 @@
 - Описание проекта
 - Использованные технологии
 - Инструкция по развертыванию
-- Ссылка на GitHub Pages
 
 **Описание проекта**
 
@@ -36,7 +35,3 @@ JavaScript-библиотека React, React hooks, Module-styles CSS, React-rou
 Для деплоя сайта на страницу gh-pages:
 
 `npm run deploy`
-
-**Ссылка на GitHub Pages**
-
-Ознакомиться с сайтом можно [по ссылке](https://akaevgeniy.github.io/movie-search/).
