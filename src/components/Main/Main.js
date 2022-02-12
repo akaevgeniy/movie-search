@@ -1,11 +1,14 @@
 import styles from './Main.module.css';
 import main_image from '../../images/main-movie.jpg';
 import Element from '../Element/Element';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { moviesLoad } from '../../store/actions';
 
-function Main({ movie, changeInput }) {
+function Main() {
+  const [title, setTitle] = useState('');
+
   const movies = useSelector((state) => {
     const { moviesReducer } = state;
     return moviesReducer;
@@ -14,7 +17,11 @@ function Main({ movie, changeInput }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(moviesLoad(movie));
+    dispatch(moviesLoad(title));
+  }
+
+  function handleTitleChange(e) {
+    setTitle(e.target.value);
   }
 
   return (
@@ -38,8 +45,8 @@ function Main({ movie, changeInput }) {
             type="text"
             placeholder="Enter movie title to search..."
             required
-            value={movie || ''}
-            onChange={changeInput}
+            value={title || ''}
+            onChange={handleTitleChange}
           ></input>
           <button type="submit" className={styles.button}>
             Go search

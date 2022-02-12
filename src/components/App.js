@@ -1,4 +1,3 @@
-import { useState } from 'react';
 // Добавили компонент Header с логотипом проекта
 import Header from './Header/Header';
 import Main from './Main/Main';
@@ -10,27 +9,14 @@ import MoviePage from './MoviePage/MoviePage';
 import Menu from './Menu/Menu';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 function App() {
-  const [title, setTitle] = useState('');
-
-  const items = [
-    { value: 'Search movie', href: '/' },
-    { value: 'Watch List', href: '/list' },
-    { value: 'About us', href: '/about' },
-    { value: 'Contacts', href: '/contacts' },
-  ];
-
-  function handleTitleChange(e) {
-    setTitle(e.target.value);
-  }
-
   return (
     <BrowserRouter>
       <div className="App">
         <Header />
-        <Menu items={items} header="Menu" />
+        <Menu />
         <Switch>
           <Route exact path="/">
-            <Main movie={title} changeInput={handleTitleChange} />
+            <Main />
           </Route>
           <Route exact path="/list">
             <MyList />
