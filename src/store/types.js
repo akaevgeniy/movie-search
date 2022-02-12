@@ -1,1 +1,2 @@
 export const MOVIES_LOAD = 'MOVIES_LOAD';
+export const MENU_VISIBLE_CHANGE = 'MENU_VISIBLE_CHANGE';

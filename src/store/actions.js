@@ -1,4 +1,4 @@
-import { MOVIES_LOAD } from './types';
+import { MOVIES_LOAD, MENU_VISIBLE_CHANGE } from './types';
 export const BASE_URL = 'http://www.omdbapi.com/';
 export const API_KEY = '72908fc';
 
@@ -10,5 +10,12 @@ export function moviesLoad(title) {
       type: MOVIES_LOAD,
       data: jsonData,
     });
+  };
+}
+
+export function menuVisible(status) {
+  return {
+    type: MENU_VISIBLE_CHANGE,
+    data: status,
   };
 }

@@ -19,7 +19,6 @@ function App() {
     { value: 'About us', href: '/about' },
     { value: 'Contacts', href: '/contacts' },
   ];
-  const [menuActive, setMenuActive] = React.useState(false);
   //функция, выводящая в консоль ошибку при запросе к АПИ
   const parseError = (err) => {
     console.log(err);
@@ -40,8 +39,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header active={menuActive} changeActive={setMenuActive} />
-        <Menu active={menuActive} changeActive={setMenuActive} items={items} header="Menu" />
+        <Header />
+        <Menu items={items} header="Menu" />
         <Switch>
           <Route exact path="/">
             <Main movie={title} changeInput={handleTitleChange} moreInfo={getMovieInfo} />
