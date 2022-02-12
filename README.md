@@ -13,11 +13,11 @@
 
 _Планы по доработке_
 
-Планируется перенос сервиса на Redux для реализации функции ведения списка просмотренных фильмов.
+Планируется реализация функции ведения списка просмотренных фильмов с личными оценками.
 
 **Использованные технологии**
 
-JavaScript-библиотека React, React hooks, Module-styles CSS, React-router-dom, Redux/ReduxToolKit, API Axios, JSX.
+JavaScript-библиотека React, React hooks, Module-styles CSS, React-router-dom, Redux/React-Redux, Redux-thunk, API Axios, JSX.
 
 **Инструкция по развертыванию**
 
