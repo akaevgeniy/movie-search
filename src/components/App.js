@@ -12,7 +12,6 @@ import * as api from '../utils/api';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 function App() {
   const [title, setTitle] = React.useState('');
-  const [searchArray, setSearchArray] = React.useState({});
   const [findingMovie, setFindingMovie] = React.useState({});
   const items = [
     { value: 'Search movie', href: '/' },
@@ -29,13 +28,7 @@ function App() {
   function handleTitleChange(e) {
     setTitle(e.target.value);
   }
-  function handleSubmit(e) {
-    e.preventDefault();
-    api
-      .movieList(title)
-      .then((data) => setSearchArray(data))
-      .catch((err) => parseError(err));
-  }
+
   function getMovieInfo(imdb) {
     api
       .movieImdbSearch({ imdb })
@@ -51,7 +44,7 @@ function App() {
         <Menu active={menuActive} changeActive={setMenuActive} items={items} header="Menu" />
         <Switch>
           <Route exact path="/">
-            <Main movie={title} functionSubmit={handleSubmit} changeInput={handleTitleChange} moviesList={searchArray} moreInfo={getMovieInfo} />
+            <Main movie={title} changeInput={handleTitleChange} moreInfo={getMovieInfo} />
           </Route>
           <Route exact path="/list">
             <MyList />
