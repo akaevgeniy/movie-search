@@ -1,2 +1,3 @@
 export const MOVIES_LOAD = 'MOVIES_LOAD';
+export const MOVIE_FINDING = 'MOVIE_FINDING';
 export const MENU_VISIBLE_CHANGE = 'MENU_VISIBLE_CHANGE';

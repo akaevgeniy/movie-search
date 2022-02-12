@@ -1,9 +1,13 @@
 import React from 'react';
 import styles from './Element.module.css';
+import { useDispatch } from 'react-redux';
+import { movieFinding } from '../../store/actions';
 
-function Element({ id, poster, title, year, type, openInfo }) {
+function Element({ id, poster, title, year, type }) {
+  const dispatch = useDispatch();
+
   function handleClick() {
-    openInfo(id);
+    dispatch(movieFinding(id));
   }
 
   return (

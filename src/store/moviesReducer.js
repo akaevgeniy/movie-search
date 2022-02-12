@@ -13,6 +13,7 @@ export const moviesReducer = (state = intialState, action) => {
         ...state,
         movies: moviesNew,
       };
+
     default:
       return state;
   }

@@ -1,12 +1,11 @@
 import styles from './Main.module.css';
 import main_image from '../../images/main-movie.jpg';
 import Element from '../Element/Element';
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { moviesLoad } from '../../store/actions';
 
-function Main({ movie, changeInput, moreInfo }) {
+function Main({ movie, changeInput }) {
   const movies = useSelector((state) => {
     const { moviesReducer } = state;
     return moviesReducer;
@@ -17,7 +16,7 @@ function Main({ movie, changeInput, moreInfo }) {
     e.preventDefault();
     dispatch(moviesLoad(movie));
   }
-  console.log(movies);
+
   return (
     <main className={styles.main}>
       <section className={styles.search__block}>
@@ -52,7 +51,7 @@ function Main({ movie, changeInput, moreInfo }) {
         {movies.movies.Search
           ? movies.movies.Search.map((elem) => (
               <Link className={styles.decoration_none} to={`movie/${elem.imdbID}`} key={elem.imdbID}>
-                <Element id={elem.imdbID} poster={elem.Poster} title={elem.Title} year={elem.Year} type={elem.Type} openInfo={moreInfo} />
+                <Element id={elem.imdbID} poster={elem.Poster} title={elem.Title} year={elem.Year} type={elem.Type} />
               </Link>
             ))
           : ''}
