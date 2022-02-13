@@ -1,6 +1,7 @@
 import styles from './Main.module.css';
 import main_image from '../../images/main-movie.jpg';
 import Element from '../Element/Element';
+import Spin from '../Spin/Spin';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -55,6 +56,7 @@ function Main() {
       </section>
       <section aria-label="label" className={styles.elements}>
         <p className={styles.results}>Total results: {movies.movies.totalResults}</p>
+        <Spin />
         {movies.movies.Search
           ? movies.movies.Search.map((elem) => (
               <Link className={styles.decoration_none} to={`movie/${elem.imdbID}`} key={elem.imdbID}>
