@@ -1,33 +1,47 @@
 import { MOVIES_LOAD, MENU_VISIBLE_CHANGE, MOVIE_FINDING, LOADER_DISPLAY_ON, LOADER_DISPLAY_OFF, ERROR_DISPLAY_ON, ERROR_DISPLAY_OFF } from './types';
+import axios from 'axios';
 export const BASE_URL = 'http://www.omdbapi.com/';
 export const API_KEY = '72908fc';
 
 export function moviesLoad(title) {
-  return async (dispatch) => {
-    try {
-      dispatch(loaderOn());
-      const response = await fetch(`${BASE_URL}?s=${title}&apikey=${API_KEY}`);
-      const jsonData = await response.json();
-      dispatch({
-        type: MOVIES_LOAD,
-        data: jsonData,
-      });
-      dispatch(loaderOff());
-    } catch (err) {
-      dispatch(errorOn('Ошибка API'));
-      dispatch(loaderOff());
-    }
+  return (dispatch) => {
+    dispatch(loaderOn());
+    axios
+      .get(`${BASE_URL}?s=${title}&apikey=${API_KEY}`)
+      .then((res) => {
+        dispatch({
+          type: MOVIES_LOAD,
+          data: res.data,
+        });
+      })
+      .catch((err) => {
+        dispatch(console.log('Произошла ошибка', err));
+      })
+      .finally(dispatch(loaderOff()));
   };
 }
 
 export function movieFinding(id) {
-  return async (dispatch) => {
-    const response = await fetch(`${BASE_URL}?i=${id}&plot=full&apikey=${API_KEY}`);
-    const jsonData = await response.json();
-    dispatch({
-      type: MOVIE_FINDING,
-      data: jsonData,
-    });
+  // return async (dispatch) => {
+  //   const response = await fetch(`${BASE_URL}?i=${id}&plot=full&apikey=${API_KEY}`);
+  //   const jsonData = await response.json();
+  //   dispatch({
+  //     type: MOVIE_FINDING,
+  //     data: jsonData,
+  //   });
+  // };
+  return (dispatch) => {
+    axios
+      .get(`${BASE_URL}?i=${id}&plot=full&apikey=${API_KEY}`)
+      .then((res) => {
+        dispatch({
+          type: MOVIE_FINDING,
+          data: res.data,
+        });
+      })
+      .catch((err) => {
+        dispatch(console.log('Произошла ошибка', err));
+      });
   };
 }
 
