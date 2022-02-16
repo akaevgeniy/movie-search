@@ -25,7 +25,7 @@ function Main() {
   function handleTitleChange(e) {
     setTitle(e.target.value);
   }
-  console.log(spinner);
+
   return (
     <main className={styles.main}>
       <section className={styles.search__block}>
