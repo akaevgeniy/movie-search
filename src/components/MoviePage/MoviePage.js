@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Spin from '../Spin/Spin';
 import styles from './MoviePage.module.css';
 
 function MoviePage() {
@@ -10,8 +11,13 @@ function MoviePage() {
     const { findingReducer } = state;
     return findingReducer;
   });
+  const spinner = useSelector((state) => state.appReducer.loading);
 
-  return (
+  return spinner ? (
+    <div className={styles.spin_block}>
+      <Spin />
+    </div>
+  ) : (
     <div className={styles.block}>
       <div className={styles.movie__block}>
         <img className={styles.poster} src={movie.movie.Poster} alt={movie.movie.Title} />

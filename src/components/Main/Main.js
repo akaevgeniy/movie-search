@@ -14,6 +14,7 @@ function Main() {
     const { moviesReducer } = state;
     return moviesReducer;
   });
+  const spinner = useSelector((state) => state.appReducer.loading);
   const dispatch = useDispatch();
 
   function handleSubmit(e) {
@@ -24,7 +25,7 @@ function Main() {
   function handleTitleChange(e) {
     setTitle(e.target.value);
   }
-
+  console.log(spinner);
   return (
     <main className={styles.main}>
       <section className={styles.search__block}>
@@ -56,14 +57,21 @@ function Main() {
       </section>
       <section aria-label="label" className={styles.elements}>
         <p className={styles.results}>Total results: {movies.movies.totalResults}</p>
-        <Spin />
-        {movies.movies.Search
-          ? movies.movies.Search.map((elem) => (
-              <Link className={styles.decoration_none} to={`movie/${elem.imdbID}`} key={elem.imdbID}>
-                <Element id={elem.imdbID} poster={elem.Poster} title={elem.Title} year={elem.Year} type={elem.Type} />
-              </Link>
-            ))
-          : ''}
+
+        {spinner ? (
+          <div className={styles.spin_block}>
+            {' '}
+            <Spin />
+          </div>
+        ) : movies.movies.Search ? (
+          movies.movies.Search.map((elem) => (
+            <Link className={styles.decoration_none} to={`movie/${elem.imdbID}`} key={elem.imdbID}>
+              <Element id={elem.imdbID} poster={elem.Poster} title={elem.Title} year={elem.Year} type={elem.Type} />
+            </Link>
+          ))
+        ) : (
+          ''
+        )}
       </section>
     </main>
   );

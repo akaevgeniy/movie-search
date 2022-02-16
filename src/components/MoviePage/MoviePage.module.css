@@ -91,6 +91,13 @@
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+.spin_block {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media screen and (max-width: 1023px) {
   .block {
     margin-left: calc((100% - 709px) / 2);

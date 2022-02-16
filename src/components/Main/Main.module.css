@@ -121,6 +121,12 @@
 .decoration_none {
   text-decoration: none;
 }
+.spin_block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 @media screen and (max-width: 1279px) {
   .search {
     max-width: 479px;
