@@ -8,10 +8,9 @@ export function moviesLoad(title) {
     try {
       dispatch(loaderOn());
       const response = await axios.get(`${BASE_URL}?s=${title}&apikey=${API_KEY}`);
-      const jsonData = await response;
       dispatch({
         type: MOVIES_LOAD,
-        data: jsonData.data,
+        data: response.data,
       });
       dispatch(loaderOff());
     } catch (err) {
