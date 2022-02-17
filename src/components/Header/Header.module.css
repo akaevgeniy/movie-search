@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: row;
   position: fixed;
-  width: 100vw;
   top: 0;
   z-index: 15;
   background-color: white;
@@ -97,6 +96,7 @@
     transform: translate(0%, 50%) rotate(-45deg);
   }
   .header {
+    max-width: 479px;
     height: 50px;
     justify-content: space-between;
     align-items: center;
@@ -113,5 +113,10 @@
   }
   .menu__link {
     display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header {
+    max-width: 320px;
   }
 }
