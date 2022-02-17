@@ -10,7 +10,7 @@
 
 Фронтенд проект ALL Movie Search: интерактивная страница, в которой можно найти информацию из открытых баз данных о фильмах. Поиск необходимо задавать на английском языке.
 
-<img src="https://i.ibb.co/jzk9JRL/site.gif" alt="ALL Movie Search" />
+<a href="https://ibb.co/JqjW3Qz"><img src="https://i.ibb.co/jzk9JRL/site.gif" alt="site" border="0" /></a>
 
 _Планы по доработке_
 
