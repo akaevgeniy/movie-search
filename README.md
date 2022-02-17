@@ -10,7 +10,7 @@
 
 Фронтенд проект ALL Movie Search: интерактивная страница, в которой можно найти информацию из открытых баз данных о фильмах. Поиск необходимо задавать на английском языке.
 
-[![site419039851e8c1592.gif](https://s10.gifyu.com/images/site419039851e8c1592.gif)](https://gifyu.com/image/SzFq1)
+[![ALL Movie Search](https://s10.gifyu.com/images/site419039851e8c1592.gif)](https://gifyu.com/image/SzFq1)
 
 _Планы по доработке_
 
