@@ -1,17 +1,25 @@
-import React from 'react';
+import React, {useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Spin from '../Spin/Spin';
 import styles from './MoviePage.module.css';
+import { movieFinding } from '../../store/actions';
 
 function MoviePage() {
   const history = useHistory();
+
+  const dispatch = useDispatch();
 
   const movie = useSelector((state) => {
     const { findingReducer } = state;
     return findingReducer;
   });
   const spinner = useSelector((state) => state.appReducer.loading);
+
+   useEffect(() => {
+    dispatch(movieFinding(window.location.pathname.slice(7)));
+   // window.localStorage.setItem('film', JSON.stringify(movie));
+  }, []);
 
   return spinner ? (
     <div className={styles.spin_block}>
